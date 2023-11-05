@@ -47,8 +47,22 @@ class APIViewPersona(APIView):
                 return JsonResponse({'message': 'Data deleted successfully'}, status=status.HTTP_200_OK)
             except Http404:
                 return Response({'message': 'ID no encontrado'}, status=status.HTTP_404_NOT_FOUND)
-	#def patch(self):
-	#	pass
+	def patch(self, request, pk):
+		# persona = get_object_or_404(persona, pk=pk)
+        if request.method == 'POST':
+            try:
+                    parameters = request.GET.copy() #params by url
+                    parameters = request.data.copy() #params by json
+                    print('holaaaa1')
+                    response = self.manager.create_persona(parameters)
+                    print('responsse:', response)
+                    print('holaaaa2')
+                    return Response({"mesage": response})
+                except Exception as e:
+                    return HttpResponse({"error": e.message}, status=int(e.status))
+            # response = self.manager.update_persona(request)
+        #     return redirect('Persona_list')
+        # return render(request, 'crud_app/Persona_update.html', {'Persona': persona})
 
 	#def put(self):
 	#	pass
