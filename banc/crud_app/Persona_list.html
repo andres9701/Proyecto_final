@@ -1,0 +1,30 @@
+<h1>Product List</h1>
+
+<a href="{% url 'product_create' %}">Create Product</a>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Quantity</th>
+      <th>Value</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for product in products %}
+    <tr>
+      <td>{{ product.name }}</td>
+      <td>{{ product.quantity }}</td>
+      <td>{{ product.value }}</td>
+      <td>
+        <a href="{% url '_update' product.pk %}">Edit</a>
+        <form action="{% url 'product_delete' product.pk %}" method="post">
+          {% csrf_token %}
+          <button type="submit">Delete</button>
+        </form>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>

@@ -1,0 +1,10 @@
+PS C:\Users\Lenovo\Documents\CIAF\Base de datos II\Proyecto_final\env\scripts> .\activate.bat
+
+
+{
+    "data": {
+        "nombre": "jose",
+        "apellido": "armando",
+        "cedula": 12345
+    }
+}

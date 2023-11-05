@@ -1,0 +1,8 @@
+<h1>Delete Product</h1>
+
+<p>Are you sure you want to delete "{{ persona.name }}"?</p>
+
+<form method="post">
+  {% csrf_token %}
+  <button type="submit">Delete</button>
+</form>
