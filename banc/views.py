@@ -64,8 +64,8 @@ class APIViewPersona(APIView):
         #     return redirect('Persona_list')
         # return render(request, 'crud_app/Persona_update.html', {'Persona': persona})
 
-	#def put(self):
-	#	pass
+	def put(self):
+		pass
 
     def Persona_list(request, pk):
         if request.method == 'GET':
