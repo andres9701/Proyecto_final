@@ -50,8 +50,8 @@ class APIViewPersona(APIView):
 	#def patch(self):
 	#	pass
 
-	#def put(self):
-	#	pass
+	def put(self):
+		pass
 
     def Persona_list(request, pk):
         if request.method == 'GET':
