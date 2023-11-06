@@ -69,8 +69,8 @@ class APIViewPersona(APIView):
                 return HttpResponse({"error": e.message}, status=int(e.status))
 
 #-------------------------------
-# from django.shortcuts import render, get_object_or_404, redirect
-# from .models import Persona
+from django.shortcuts import render, get_object_or_404, redirect
+from .models import Persona
 
 #     def Persona_list(request):
 #         Personas = Persona.objects.all()
